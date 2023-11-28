@@ -14,6 +14,8 @@ void helloKernel(int N)
 
 int main(void) {
   int N=10,numGPUs;
+  int blks=4;
+  int threadsPerBlk=3;
 
   /* check have GPU else quit */
   cudaGetDeviceCount(&numGPUs);
@@ -22,9 +24,10 @@ int main(void) {
   printf("hello on CPU\n");
 
   /* call GPU kernel  */
-  helloKernel<<<4,3>>> (N);
+  helloKernel<<<blks,threadsPerBlk>>> (N);
 
   printf("hello again from CPU\n");
+
 
 }
 
