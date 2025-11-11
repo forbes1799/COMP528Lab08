@@ -9,9 +9,6 @@ procs=${SLURM_NTASKS:-1} #Gets the requested number of processes when sbatch -n 
 
 cores=${SLURM_CPUS_PER_TASK:-1} #Gets the requested number of cores when sbatch -c is used
 
-module load compilers/intel/2019u5
-module load mpi/intel-mpi/2019u5/bin
-
 # 1. Add code here to compile a program with mpiicc and also with omp
 
 # 2. Add code here to run the program with mpirun -np $procs program_name
